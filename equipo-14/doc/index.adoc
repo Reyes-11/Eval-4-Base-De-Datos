@@ -3,7 +3,7 @@
 :revdate: {localdate}
 :toc: left 
 :toc-tittle: Contenidos
-:sectnums:
+:!sectnums:
 :source-highligther: rouge
 :icons: font
 
