@@ -1,0 +1,52 @@
+@startuml
+'!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "Autores" as autores {
+  * id_autor : INT <<PK>>
+  --
+  nombre : VARCHAR(100)
+}
+
+entity "Libros" as libros {
+  * isbn : VARCHAR(20) <<PK>>
+  --
+  titulo : VARCHAR(150)
+  editorial : VARCHAR(100)
+  num_paginas : INT
+  id_autor : INT <<FK>>
+}
+
+entity "Ejemplares" as ejemplares {
+  * id_ejemplar : INT <<PK>>
+  --
+  localizacion : VARCHAR(100)
+  isbn : VARCHAR(20) <<FK>>
+}
+
+entity "Socios" as socios {
+  * dni : VARCHAR(15) <<PK>>
+  --
+  nombre : VARCHAR(50)
+  apellidos : VARCHAR(100)
+  direccion : VARCHAR(150)
+  telefono : VARCHAR(20)
+}
+
+entity "Prestamos" as prestamos {
+  * id_prestamo : INT <<PK>>
+  --
+  dni : VARCHAR(15) <<FK>>
+  id_ejemplar : INT <<FK>>
+  fecha_prestamo : DATE
+  fecha_devolucion : DATE
+}
+
+' Relaciones
+autores ||--o{ libros : "escribe"
+libros ||--o{ ejemplares : "tiene"
+ejemplares ||--o{ prestamos : "se presta en"
+socios ||--o{ prestamos : "realiza"
+
+@enduml
