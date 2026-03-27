@@ -14,14 +14,14 @@ def consultar_tabla(cursor, tabla):
     print(f"\n>>> MOSTRANDO TABLA: {tabla.upper()} <<<")
     cursor.execute(f"SELECT * FROM {tabla}")
     
-    # 3. Almacenar resultados en variables
+    # Almacenar resultados en variables
     columnas = [desc[0] for desc in cursor.description]
     print(" | ".join(columnas))
     print("-" * 50)
     
     filas = cursor.fetchall()
     for fila in filas:
-        # 4. Imprimir el resultado
+        # Imprimir el resultado
         print(" | ".join(str(valor) for valor in fila))
 
 try:
