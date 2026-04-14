@@ -1,6 +1,6 @@
 # Fecha: 09-04-2026
-# Autores: Andŕes Reyes, Allan González, Fernando Reyes, Mitchael Ruíz
-# Descripción: Sistema de gestión de base de datos para biblioteca.
+# Autores: 
+# Andŕes Reyes, Allan González, Fernando Reyes, Mitchael Ruíz
 
 #========================= IMPORTS
 import mariadb
